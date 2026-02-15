@@ -1,20 +1,27 @@
-// Note: below code fail to execute
-// process.env.UV_THREADPOOL_SIZE = 3;
-// aternate way of code shown below is working only via terminal
-// $env:UV_THREADPOOL_SIZE = 1; node .\eventLoop.js
-// Result:
-// PS C:\Users\kraja\Desktop\1-node-farm\How-Node-Works> $env:UV_THREADPOOL_SIZE = 1; node .\eventLoop.js
-// Top-Level Finished
-// SetTimeOut Timer I Finished
-// read file input / output Finished
-// -------------------------------------
-// Next Tick Finished
-// SetTimeOut Timer II Finished
-// 1163 password encrypted
-// 2306 password encrypted
-// SetTimeOut Timer III Finished
-// 3464 password encrypted
-// 4621 password encrypted
+// =================================================================================
+// NOTE:
+// ---------------------------------------------------------------------------------
+// This code fail on execution
+//       process.env.UV_THREADPOOL_SIZE = 3;
+// --------------------------------------------------------------------------------
+// This code success on execution only through Terminal
+//      $env:UV_THREADPOOL_SIZE = 1; node .\eventLoop.js
+// -------------------------------------------------------------------------------
+// OUTPUT:
+// -------------------------------------------------------------------------------
+//      PS C:\> $env:UV_THREADPOOL_SIZE = 1; node .\eventLoop.js
+//      Top-Level Finished
+//      SetTimeOut Timer I Finished
+//      read file input / output Finished
+//      -------------------------------------
+//      Next Tick Finished
+//      SetTimeOut Timer II Finished
+//      1163 password encrypted
+//      2306 password encrypted
+//      SetTimeOut Timer III Finished
+//      3464 password encrypted
+//      4621 password encrypted
+// ================================================================
 
 const fs = require("fs");
 const crypt = require("crypto");
